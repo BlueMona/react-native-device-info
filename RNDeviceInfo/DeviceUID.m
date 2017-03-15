@@ -43,9 +43,16 @@
     At last, the UID is persisted if needed to.
  */
 - (NSString *)uid {
+    // make it cordova compatible
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    static NSString* UUID_KEY = @"CDVUUID";
+    // Check user defaults first to maintain backwards compaitibility with previous versions
+    // which didn't user identifierForVendor
+    if (!_uid) _uid = [userDefaults stringForKey:UUID_KEY];
+    // move identifier for vendor up
+    if (!_uid) _uid = [[self class] appleIFV];
     if (!_uid) _uid = [[self class] valueForKeychainKey:_uidKey service:_uidKey];
     if (!_uid) _uid = [[self class] valueForUserDefaultsKey:_uidKey];
-    if (!_uid) _uid = [[self class] appleIFV];
     if (!_uid) _uid = [[self class] randomUUID];
     [self save];
     return _uid;
