@@ -1,6 +1,22 @@
 ## Release Notes
 
-### next
+### 0.24.3
+ * Support React Native Windows 0.57, minimal version is now 10.0.14393 for the target platform
+
+### 0.24.2
+ * Update typescript definitions (https://github.com/rebeccahughes/react-native-device-info/pull/498)
+
+### 0.24.1
+ * Update build.gradle to remove compile warning (https://github.com/rebeccahughes/react-native-device-info/pull/520)
+
+### 0.24.0
+ * Added `isLandscape()` (https://github.com/rebeccahughes/react-native-device-info/pull/504)
+
+### 0.23.0
+ * Add `hasNotch()` (https://github.com/rebeccahughes/react-native-device-info/pull/500)
+
+### 0.22.6
+ * Support new models (XR, XS, XS Max) and iPad 6th Gen (https://github.com/rebeccahughes/react-native-device-info/pull/499) 
 
 ### 0.22.5
  * Fix typescript declaration export (https://github.com/rebeccahughes/react-native-device-info/pull/478)
